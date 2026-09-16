@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>דוח אימונים — שון</title>
+<style>
+  :root {
+    --bg: #0f1419;
+    --panel: #1a222d;
+    --panel2: #232d3b;
+    --text: #e8eef6;
+    --muted: #8b9bb0;
+    --accent: #3b82f6;
+    --up: #34d399;
+    --down: #f87171;
+    --border: #2c3a4d;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.5;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 28px 20px 60px; }
+  h1 { font-size: 1.75rem; margin: 0 0 6px; font-weight: 700; }
+  .subtitle { color: var(--muted); margin-bottom: 28px; }
+  .stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px; margin-bottom: 28px;
+  }
+  .stat {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 14px; padding: 16px 18px;
+  }
+  .stat .n { font-size: 1.6rem; font-weight: 700; }
+  .stat .l { color: var(--muted); font-size: 0.85rem; }
+  h2 { font-size: 1.15rem; margin: 32px 0 14px; font-weight: 600; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .card, .chart-card, .session {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
+  }
+  .card { padding: 16px; }
+  .chart-card { padding: 16px; }
+  .card-title { font-weight: 600; margin-bottom: 10px; }
+  .arrow { color: var(--muted); margin: 4px 0; }
+  .delta.up { color: var(--up); font-weight: 600; }
+  .delta.down { color: var(--down); font-weight: 600; }
+  .delta.flat { color: var(--muted); }
+  .muted { color: var(--muted); }
+  .small { font-size: 0.8rem; margin-top: 8px; }
+  .spark { width: 100%; height: 64px; display: block; }
+  .session { padding: 16px 18px; margin-bottom: 12px; }
+  .session header { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; margin-bottom: 10px; }
+  .session .date { font-weight: 700; font-size: 1.05rem; }
+  .session .meta { color: var(--muted); font-size: 0.9rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  th { text-align: right; color: var(--muted); font-weight: 500; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+  td { padding: 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  td.sets { font-variant-numeric: tabular-nums; white-space: normal; }
+  .foot { margin: 10px 0 0; font-size: 0.85rem; color: var(--muted); }
+  .banner {
+    background: linear-gradient(135deg, #1e3a5f, #1a222d);
+    border: 1px solid var(--border); border-radius: 14px;
+    padding: 16px 18px; margin-bottom: 24px; color: #c7d7ea;
+  }
+  footer { margin-top: 36px; color: var(--muted); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>דוח אימונים</h1>
+    <p class="subtitle">שון · עודכן 17.09.2026 01:55 · Asia/Jerusalem</p>
+    <div class="banner">
+      מטרה: כיוון 85 ק״ג עם שמירה/בנייה של כוח. קרסול בחזרה הדרגתית מאז סוף אוגוסט —
+      אירובי עבר מריצה לאופניים/ים לפי הצורך. יעד קביעות: 3–4 אימונים בשבוע.
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">12</div><div class="l">אימונים מתועדים</div></div>
+      <div class="stat"><div class="n">08.03–09.14</div><div class="l">טווח תאריכים</div></div>
+      <div class="stat"><div class="n">17</div><div class="l">תרגילים ייחודיים</div></div>
+      <div class="stat"><div class="n">36→68</div><div class="l">חזה / משיכת גב (שיא אחרון)</div></div>
+    </div>
+
+    <h2>התקדמות בכוח</h2>
+    <div class="grid">
+    <div class="card">
+      <div class="card-title">דחיקת חזה בישיבה</div>
+      <div class="card-body">
+        <div><span class="muted">2026-08-03</span> 14×32 ק״ג</div>
+        <div class="arrow">↓</div>
+        <div><span class="muted">2026-09-14</span> <strong>14×36 ק״ג</strong> <span class="delta up">+4 ק״ג</span></div>
+        <div class="muted small">10 סשנים · נפח אחרון 1512</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">משיכת גב אליי</div>
+      <div class="card-body">
+        <div><span class="muted">2026-08-03</span> 14×59 ק״ג</div>
+        <div class="arrow">↓</div>
+        <div><span class="muted">2026-09-14</span> <strong>14×68 ק״ג</strong> <span class="delta up">+9 ק״ג</span></div>
+        <div class="muted small">9 סשנים · נפח אחרון 2856</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">יד קדמית</div>
+      <div class="card-body">
+        <div><span class="muted">2026-08-03</span> 14×27 ק״ג</div>
+        <div class="arrow">↓</div>
+        <div><span class="muted">2026-08-25</span> <strong>14×36 ק״ג</strong> <span class="delta up">+9 ק״ג</span></div>
+        <div class="muted small">6 סשנים · נפח אחרון 980</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">פולי עליון</div>
+      <div class="card-body">
+        <div><span class="muted">2026-08-08</span> 10×45 ק״ג</div>
+        <div class="arrow">↓</div>
+        <div><span class="muted">2026-09-14</span> <strong>10×41 ק״ג</strong> <span class="delta down">-4 ק״ג</span></div>
+        <div class="muted small">5 סשנים · נפח אחרון 1230</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">מקבילים בישיבה</div>
+      <div class="card-body">
+        <div><span class="muted">2026-08-03</span> 14×54 ק״ג</div>
+        <div class="arrow">↓</div>
+        <div><span class="muted">2026-08-21</span> <strong>14×64 ק״ג</strong> <span class="delta up">+10 ק״ג</span></div>
+        <div class="muted small">4 סשנים · נפח אחרון 896</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">כתפיים דחיקה</div>
+      <div class="card-body">
+        <div><span class="muted">2026-08-14</span> 10×25 ק״ג</div>
+        <div class="arrow">↓</div>
+        <div><span class="muted">2026-08-18</span> <strong>4×25 ק״ג</strong> <span class="delta flat">0 ק״ג</span></div>
+        <div class="muted small">3 סשנים · נפח אחרון 190</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">פולי גב תחתון</div>
+      <div class="card-body">
+        <div><span class="muted">2026-08-14</span> 15×50 ק״ג</div>
+        <div class="arrow">↓</div>
+        <div><span class="muted">2026-09-11</span> <strong>14×50 ק״ג</strong> <span class="delta flat">0 ק״ג</span></div>
+        <div class="muted small">2 סשנים · נפח אחרון 2100</div>
+      </div>
+    </div></div>
+
+    <h2>מגמת משקלים</h2>
+    <div class="grid">
+    <div class="chart-card">
+      <div class="card-title">דחיקת חזה בישיבה — משקל שיא לסט</div>
+      <svg viewBox="0 0 280 64" class="spark" aria-hidden="true"><polyline fill="none" stroke="#3b82f6" stroke-width="2.5" points="8.0,56.0 37.3,56.0 66.7,8.0 96.0,8.0 125.3,8.0 154.7,8.0 184.0,8.0 213.3,8.0 242.7,8.0 272.0,8.0"/><circle cx="8.0" cy="56.0" r="3" fill="#3b82f6"/><circle cx="37.3" cy="56.0" r="3" fill="#3b82f6"/><circle cx="66.7" cy="8.0" r="3" fill="#3b82f6"/><circle cx="96.0" cy="8.0" r="3" fill="#3b82f6"/><circle cx="125.3" cy="8.0" r="3" fill="#3b82f6"/><circle cx="154.7" cy="8.0" r="3" fill="#3b82f6"/><circle cx="184.0" cy="8.0" r="3" fill="#3b82f6"/><circle cx="213.3" cy="8.0" r="3" fill="#3b82f6"/><circle cx="242.7" cy="8.0" r="3" fill="#3b82f6"/><circle cx="272.0" cy="8.0" r="3" fill="#3b82f6"/></svg>
+    </div>
+    <div class="chart-card">
+      <div class="card-title">משיכת גב אליי — משקל שיא לסט</div>
+      <svg viewBox="0 0 280 64" class="spark" aria-hidden="true"><polyline fill="none" stroke="#3b82f6" stroke-width="2.5" points="8.0,56.0 41.0,29.3 74.0,29.3 107.0,29.3 140.0,29.3 173.0,29.3 206.0,8.0 239.0,8.0 272.0,8.0"/><circle cx="8.0" cy="56.0" r="3" fill="#3b82f6"/><circle cx="41.0" cy="29.3" r="3" fill="#3b82f6"/><circle cx="74.0" cy="29.3" r="3" fill="#3b82f6"/><circle cx="107.0" cy="29.3" r="3" fill="#3b82f6"/><circle cx="140.0" cy="29.3" r="3" fill="#3b82f6"/><circle cx="173.0" cy="29.3" r="3" fill="#3b82f6"/><circle cx="206.0" cy="8.0" r="3" fill="#3b82f6"/><circle cx="239.0" cy="8.0" r="3" fill="#3b82f6"/><circle cx="272.0" cy="8.0" r="3" fill="#3b82f6"/></svg>
+    </div>
+    <div class="chart-card">
+      <div class="card-title">יד קדמית — משקל שיא לסט</div>
+      <svg viewBox="0 0 280 64" class="spark" aria-hidden="true"><polyline fill="none" stroke="#3b82f6" stroke-width="2.5" points="8.0,56.0 60.8,29.3 113.6,56.0 166.4,56.0 219.2,18.7 272.0,8.0"/><circle cx="8.0" cy="56.0" r="3" fill="#3b82f6"/><circle cx="60.8" cy="29.3" r="3" fill="#3b82f6"/><circle cx="113.6" cy="56.0" r="3" fill="#3b82f6"/><circle cx="166.4" cy="56.0" r="3" fill="#3b82f6"/><circle cx="219.2" cy="18.7" r="3" fill="#3b82f6"/><circle cx="272.0" cy="8.0" r="3" fill="#3b82f6"/></svg>
+    </div>
+    <div class="chart-card">
+      <div class="card-title">מקבילים בישיבה — משקל שיא לסט</div>
+      <svg viewBox="0 0 280 64" class="spark" aria-hidden="true"><polyline fill="none" stroke="#3b82f6" stroke-width="2.5" points="8.0,56.0 96.0,56.0 184.0,8.0 272.0,8.0"/><circle cx="8.0" cy="56.0" r="3" fill="#3b82f6"/><circle cx="96.0" cy="56.0" r="3" fill="#3b82f6"/><circle cx="184.0" cy="8.0" r="3" fill="#3b82f6"/><circle cx="272.0" cy="8.0" r="3" fill="#3b82f6"/></svg>
+    </div></div>
+
+    <h2>היסטוריית אימונים</h2>
+    
+    <article class="session">
+      <header>
+        <div class="date">2026-09-14</div>
+        <div class="meta">אופניים</div>
+      </header>
+      <table>
+        <thead><tr><th>תרגיל</th><th>סטים</th><th></th></tr></thead>
+        <tbody><tr><td>דחיקת חזה בישיבה</td><td class='sets'>14×36 ק״ג, 14×36 ק״ג, 14×36 ק״ג</td><td class='muted'></td></tr><tr><td>משיכת גב אליי</td><td class='sets'>14×68 ק״ג, 14×68 ק״ג, 14×68 ק״ג</td><td class='muted'></td></tr><tr><td>פולי עליון</td><td class='sets'>10×41 ק״ג, 10×41 ק״ג, 10×41 ק״ג</td><td class='muted'></td></tr><tr><td>יד אחורית משיכה</td><td class='sets'>14×32 ק״ג, 6×36 ק״ג, 6×32 ק״ג, 12×32 ק״ג</td><td class='muted'></td></tr></tbody>
+      </table>
+      <p class="foot">post-sprain return; prefer bike over run</p>
+    </article>
+    <article class="session">
+      <header>
+        <div class="date">2026-09-11</div>
+        <div class="meta">אופניים</div>
+      </header>
+      <table>
+        <thead><tr><th>תרגיל</th><th>סטים</th><th></th></tr></thead>
+        <tbody><tr><td>דחיקת חזה בישיבה</td><td class='sets'>14×36 ק״ג, 14×36 ק״ג, 14×36 ק״ג</td><td class='muted'>set3: a bit less (effort/ROM)</td></tr><tr><td>משיכת גב אליי</td><td class='sets'>14×68 ק״ג, 14×68 ק״ג, 14×64 ק״ג</td><td class='muted'></td></tr><tr><td>פולי גב תחתון</td><td class='sets'>14×50 ק״ג, 14×50 ק״ג, 14×50 ק״ג</td><td class='muted'></td></tr></tbody>
+      </table>
+      <p class="foot">post-sprain return; prefer bike over run · switched cardio to bike — smart for ankle</p>
+    </article>
+    <article class="session">
+      <header>
+        <div class="date">2026-08-28</div>
+        <div class="meta">ריצה 4.5 ק״מ</div>
+      </header>
+      <table>
+        <thead><tr><th>תרגיל</th><th>סטים</th><th></th></tr></thead>
+        <tbody><tr><td>משיכת גב אליי</td><td class='sets'>14×68 ק״ג, 14×68 ק״ג, 8×68 ק״ג, 6×64 ק״ג</td><td class='muted'></td></tr><tr><td>דחיקת חזה בישיבה</td><td class='sets'>14×36 ק״ג, 14×36 ק״ג, 14×36 ק״ג</td><td class='muted'></td></tr></tbody>
+      </table>
+      <p class="foot">around/after ankle sprain window — load cautious</p>
+    </article>
+    <article class="session">
+      <header>
+        <div class="date">2026-08-25</div>
+        <div class="meta">ריצה 4.0 ק״מ</div>
+      </header>
+      <table>
+        <thead><tr><th>תרגיל</th><th>סטים</th><th></th></tr></thead>
+        <tbody><tr><td>דחיקת חזה בישיבה</td><td class='sets'>14×36 ק״ג, 14×36 ק״ג, 8×32 ק״ג</td><td class='muted'></td></tr><tr><td>יד קדמית</td><td class='sets'>14×34 ק״ג, 14×36 ק״ג</td><td class='muted'></td></tr></tbody>
+      </table>
+      <p class="foot">around/after ankle sprain window — load cautious · post-sprain window likely; run cut to 4km; short lift</p>
+    </article>
+    <article class="session">
+      <header>
+        <div class="date">2026-08-21</div>
+        <div class="meta">ריצה 5.0 ק״מ 40 דק׳</div>
+      </header>
+      <table>
+        <thead><tr><th>תרגיל</th><th>סטים</th><th></th></tr></thead>
+        <tbody><tr><td>דחיקת חזה בישיבה</td><td class='sets'>14×36 ק״ג, 14×36 ק״ג, 4×32 ק״ג, 8×36 ק״ג</td><td class='muted'></td></tr><tr><td>מקבילים בישיבה</td><td class='sets'>14×64 ק״ג</td><td class='muted'></td></tr></tbody>
+      </table>
+      <p class="foot">around/after ankle sprain window — load cautious · shorter session; run distance down to 5km — near injury window</p>
+    </article>
+    <article class="session">
+      <header>
+        <div class="date">2026-08-18</div>
+        <div class="meta">ריצה 5.5 ק״מ 40 דק׳</div>
+      </header>
+      <table>
+        <thead><tr><th>תרגיל</th><th>סטים</th><th></th></tr></thead>
+        <tbody><tr><td>דחיקת חזה בישיבה</td><td class='sets'>14×36 ק״ג, 14×36 ק״ג, 6×36 ק״ג, 8×32 ק״ג</td><td class='muted'></td></tr><tr><td>משיכת גב אליי</td><td class='sets'>14×64 ק״ג, 14×64 ק״ג, 14×64 ק״ג</td><td class='muted'></td></tr><tr><td>כתפיים דחיקה</td><td class='sets'>4×25 ק״ג, 4×22.5 ק״ג</td><td class='muted'></td></tr><tr><td>יד קדמית</td><td class='sets'>15×32 ק״ג, 14×34 ק״ג, 10×32 ק״ג</td><td class='muted'></td></tr><tr><td>פולי עליון</td><td class='sets'></td><td class='muted'>sets not logged (??)</td></tr></tbody>
+      </table>
+      <p class="foot">pre-injury or early window · lat pulldown logged as ??</p>
+    </article>
+    <article class="session">
+      <header>
+        <div class="date">2026-08-16</div>
+        <div class="meta">ריצה 5.5 ק״מ 40 דק׳</div>
+      </header>
+      <table>
+        <thead><tr><th>תרגיל</th><th>סטים</th><th></th></tr></thead>
+        <tbody><tr><td>כתפיים דחיקה</td><td class='sets'>10×25 ק״ג, 10×25 ק״ג, 10×25 ק״ג</td><td class='muted'></td></tr><tr><td>דחיקת חזה בישיבה</td><td class='sets'>11×36 ק״ג, 3×32 ק״ג, 14×32 ק״ג, 11×32 ק״ג</td><td class='muted'></td></tr><tr><td>משיכת גב אליי</td><td class='sets'>14×64 ק״ג, 14×64 ק״ג, 14×64 ק״ג</td><td class='muted'></td></tr></tbody>
+      </table>
+      <p class="foot">pre-injury or early window</p>
+    </article>
+    <article class="session">
+      <header>
+        <div class="date">2026-08-14</div>
+        <div class="meta">11:00 · —</div>
+      </header>
+      <table>
+        <thead><tr><th>תרגיל</th><th>סטים</th><th></th></tr></thead>
+        <tbody><tr><td>דחיקת חזה בישיבה</td><td class='sets'>14×36 ק״ג, 5×36 ק״ג, 9×32 ק״ג, 12×36 ק״ג</td><td class='muted'></td></tr><tr><td>יד קדמית</td><td class='sets'>14×27 ק״ג, 14×27 ק״ג, 14×27 ק״ג</td><td class='muted'></td></tr><tr><td>מקבילים בישיבה</td><td class='sets'>14×64 ק״ג, 14×64 ק״ג, 7×64 ק״ג, 7×56 ק״ג</td><td class='muted'></td></tr><tr><td>משיכת גב אליי</td><td class='sets'>14×64 ק״ג, 14×64 ק״ג, 14×64 ק״ג</td><td class='muted'></td></tr><tr><td>כתפיים דחיקה</td><td class='sets'>10×25 ק״ג, 10×25 ק״ג</td><td class='muted'></td></tr><tr><td>פולי גב תחתון</td><td class='sets'>15×45 ק״ג, 14×50 ק״ג, 15×50 ק״ג</td><td class='muted'></td></tr><tr><td>יד קדמית משקולות</td><td class='sets'>12×12 ק״ג, 12×12 ק״ג, 7×12 ק״ג, 7×12 ק״ג, 12 ק״ג</td><td class='muted'>free text parse: 12kg x12 x2 both; +7 each arm; +a bit more 12</td></tr><tr><td>פולי עליון</td><td class='sets'>14×41 ק״ג, 14×45 ק״ג</td><td class='muted'></td></tr></tbody>
+      </table>
+      <p class="foot">pre-injury or early window</p>
+    </article>
+    <article class="session">
+      <header>
+        <div class="date">2026-08-10</div>
+        <div class="meta">19:00 · אירובי קליל 45 דק׳</div>
+      </header>
+      <table>
+        <thead><tr><th>תרגיל</th><th>סטים</th><th></th></tr></thead>
+        <tbody><tr><td>פולי עליון</td><td class='sets'>15×45 ק״ג, 9×45 ק״ג, 5×41 ק״ג, 10×41 ק״ג</td><td class='muted'></td></tr><tr><td>משיכת גב אליי</td><td class='sets'>14×64 ק״ג, 14×64 ק״ג, 5×64 ק״ג, 5×59 ק״ג</td><td class='muted'></td></tr><tr><td>חזה דחיקה קדימה</td><td class='sets'>15×27 ק״ג, 15×27 ק״ג, 15×27 ק״ג</td><td class='muted'></td></tr></tbody>
+      </table>
+      <p class="foot">pre-injury or early window</p>
+    </article>
+    <article class="session">
+      <header>
+        <div class="date">2026-08-08</div>
+        <div class="meta">ריצה 1 ק״מ</div>
+      </header>
+      <table>
+        <thead><tr><th>תרגיל</th><th>סטים</th><th></th></tr></thead>
+        <tbody><tr><td>דחיקת חזה בישיבה</td><td class='sets'>14×32 ק״ג, 14×32 ק״ג, 14×32 ק״ג</td><td class='muted'></td></tr><tr><td>יד קדמית</td><td class='sets'>14×27 ק״ג, 14×27 ק״ג, 14×27 ק״ג</td><td class='muted'></td></tr><tr><td>כיפוף רגליים ישיבה</td><td class='sets'>14×54 ק״ג, 14×54 ק״ג</td><td class='muted'></td></tr><tr><td>כיפוף רגליים שכיבה</td><td class='sets'>6×50 ק״ג, 4×45 ק״ג, 7×47 ק״ג</td><td class='muted'></td></tr><tr><td>יישור רגליים</td><td class='sets'>15×59 ק״ג, 15×59 ק״ג, 6×59 ק״ג, 9×64 ק״ג</td><td class='muted'></td></tr><tr><td>דחיקת רגליים</td><td class='sets'>10×54 ק״ג, 10×54 ק״ג</td><td class='muted'></td></tr><tr><td>פולי עליון</td><td class='sets'>10×41 ק״ג, 10×45 ק״ג</td><td class='muted'></td></tr></tbody>
+      </table>
+      <p class="foot">pre-injury or early window · leg day included; format mix weight*reps on some lines</p>
+    </article>
+    <article class="session">
+      <header>
+        <div class="date">2026-08-04</div>
+        <div class="meta">19:30 · ריצה 5.5 ק״מ 40 דק׳</div>
+      </header>
+      <table>
+        <thead><tr><th>תרגיל</th><th>סטים</th><th></th></tr></thead>
+        <tbody><tr><td>כתפיים מכשיר</td><td class='sets'>14×27 ק״ג, 14×23 ק״ג, 14×21 ק״ג</td><td class='muted'></td></tr><tr><td>משיכת גב אליי</td><td class='sets'>14×59 ק״ג, 14×64 ק״ג, 14×64 ק״ג</td><td class='muted'></td></tr><tr><td>יד קדמית</td><td class='sets'>5×32 ק״ג, 5×27 ק״ג, 5×23 ק״ג, 14×27 ק״ג, 5×27 ק״ג, 6×23 ק״ג</td><td class='muted'></td></tr><tr><td>מקבילים בישיבה</td><td class='sets'>14×50 ק״ג, 14×54 ק״ג, 14×54 ק״ג</td><td class='muted'></td></tr><tr><td>חזה סגירת ידיים</td><td class='sets'>14×45 ק״ג, 14×45 ק״ג, 14×45 ק״ג</td><td class='muted'></td></tr></tbody>
+      </table>
+      <p class="foot">pre-injury or early window</p>
+    </article>
+    <article class="session">
+      <header>
+        <div class="date">2026-08-03</div>
+        <div class="meta">08:00 · ריצה 1 ק״מ</div>
+      </header>
+      <table>
+        <thead><tr><th>תרגיל</th><th>סטים</th><th></th></tr></thead>
+        <tbody><tr><td>דחיקת חזה בישיבה</td><td class='sets'>14×27 ק״ג, 14×32 ק״ג, 14×27 ק״ג</td><td class='muted'></td></tr><tr><td>יד קדמית</td><td class='sets'>14×27 ק״ג, 14×27 ק״ג, 7×27 ק״ג, 7×23 ק״ג</td><td class='muted'></td></tr><tr><td>משיכת גב אליי</td><td class='sets'>14×54 ק״ג, 14×59 ק״ג, 14×59 ק״ג</td><td class='muted'></td></tr><tr><td>מקבילים בישיבה</td><td class='sets'>14×54 ק״ג, 14×41 ק״ג, 14×41 ק״ג</td><td class='muted'></td></tr><tr><td>פולי תחתון</td><td class='sets'>14×41 ק״ג, 14×41 ק״ג, 14×41 ק״ג</td><td class='muted'>movement ambiguous — likely triceps or low row; confirm with Shon if needed</td></tr></tbody>
+      </table>
+      <p class="foot">pre-injury window (injury late Aug 2026) · format assumed reps*weight_kg; morning session atypical vs usual 19:00</p>
+    </article>
+
+    <footer>נוצר ע״י רואי · מקור: sessions.jsonl · לרענון בקש ממני ״עדכן את דוח האימונים״</footer>
+  </div>
+</body>
+</html>
